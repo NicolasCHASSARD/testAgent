@@ -7,7 +7,7 @@ import java.util.*;
 
 public class ReadCSV {
 
-	private List<Agent> listAgent = new ArrayList<Agent>();
+	private List<Agent> listAgent;
 	private String file;
 	private BufferedReader br;
 	private Hashtable<Integer, List<Agent>> time; // Agents per year
@@ -22,12 +22,13 @@ public class ReadCSV {
 		this.file = file;
 		time = new Hashtable<Integer, List<Agent>>();
 		outputs = new Hashtable<Integer, Hashtable<String, Integer>>();
+		listAgent = new ArrayList<Agent>();
 	}
 
 	/**
 	 * Read the CSV file
 	 * 
-	 * @throws IOException
+	 * @throws IOException Throws this exception if the file 'resources/AgentTest.csv' is not found
 	 */
 	public void run() throws IOException {
 		String line = "";
@@ -120,7 +121,7 @@ public class ReadCSV {
 	/**
 	 * Analyze the list of agent and create an output
 	 * 
-	 * @param year
+	 * @param year Number of the year for which the output Hashtable will be filled
 	 */
 	public void fillOutput(int year) {
 		Hashtable<String, Integer> output = createHashtable();
@@ -168,7 +169,7 @@ public class ReadCSV {
 	/**
 	 * Execute the algorithm for 15 years and print the output
 	 * 
-	 * @param brandFactor
+	 * @param brandFactor The Brand Factor chosen by the user
 	 */
 	public void printAllExecution(float brandFactor) {
 		time.put(1, listAgent);

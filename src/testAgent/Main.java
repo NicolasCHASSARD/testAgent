@@ -8,8 +8,8 @@ public class Main {
 	/**
 	 * Entry point of the program
 	 * 
-	 * @param args
-	 * @throws IOException
+	 * @param args User inputs if the program is run from a console
+	 * @throws IOException Throws this exception if the file 'resources/AgentTest.csv' is not found
 	 */
 	public static void main(String[] args) throws IOException  {
 		String file = "resources/AgentTest.csv";
